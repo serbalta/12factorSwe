@@ -6,11 +6,14 @@ public class Account {
     private String eMail;
     private String passwrd;
 
+    private String test;
+
     public Account(String id, String userName, String eMail, String passwrd) {
         this.id = id;
         this.userName = userName;
         this.eMail = eMail;
         this.passwrd = passwrd;
+
     }
 
     public Account() {
