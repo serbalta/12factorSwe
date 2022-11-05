@@ -6,7 +6,7 @@ public class Account {
     private String eMail;
     private String passwrd;
 
-    private String test;
+    private String test1;
 
     public Account(String id, String userName, String eMail, String passwrd) {
         this.id = id;
