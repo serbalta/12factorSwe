@@ -1,36 +1,56 @@
 package com.swe.accountservice.entity;
 
-import lombok.*;
-import org.springframework.data.cassandra.core.mapping.Column;
-import org.springframework.data.cassandra.core.mapping.PrimaryKey;
-import org.springframework.data.cassandra.core.mapping.Table;
-import org.springframework.stereotype.Service;
-
-import javax.annotation.PropertyKey;
-import java.util.Date;
-import java.util.UUID;
-
-@Getter
-@AllArgsConstructor
-@NoArgsConstructor
-@EqualsAndHashCode(of = "id")
-@ToString
-@Table(value = "accounts")
 public class Account {
-    @PrimaryKey
-    private String id = UUID.randomUUID().toString();
-    @Setter
-    @Column(value = "uname")
+    private String id;
     private String userName;
-    @Setter
-    @Column(value = "email")
     private String eMail;
-    @Setter
-    @Column(value = "pwd")
-    private String password;
-    @Column(value = "created_te")
-    private Date createDate;
-    @Column(value = "is_active")
-    private Boolean isActive;
+    private String passwrd;
 
+
+    public Account(String id, String userName, String eMail, String passwrd) {
+        this.id = id;
+        this.userName = userName;
+        this.eMail = eMail;
+        this.passwrd = passwrd;
+
+    }
+
+    public Account() {
+    }
+
+    public Account(String id) {
+        this.id = id;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String geteMail() {
+        return eMail;
+    }
+
+    public void seteMail(String eMail) {
+        this.eMail = eMail;
+    }
+
+    public String getPasswrd() {
+        return passwrd;
+    }
+
+    public void setPasswrd(String passwrd) {
+        this.passwrd = passwrd;
+    }
 }
