@@ -1,0 +1,32 @@
+server:
+  port: 8500
+
+spring:
+  cloud:
+    discovery:
+      client:
+        simple:
+          instances:
+            account-service:
+              - uri: http://localhost:8080
+                metadata:
+                  management.context-path: /actuator
+            config-server:
+              - uri: http://localhost:8888
+                metadata:
+                  management.context-path: /actuator
+
+  application:
+    name: admin-server
+
+  boot:
+    admin:
+      client:
+        url: http://localhost:8500
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
