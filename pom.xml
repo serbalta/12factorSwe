@@ -7,6 +7,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.7.5</version>
+		<relativePath/>
 	</parent>
 	<groupId>com.swe</groupId>
 	<artifactId>microservice-app</artifactId>
@@ -21,7 +22,8 @@
 	<modules>
 		<module>service-parent</module>
 		<module>account-service</module>
-	</modules>
+        <module>config-server</module>
+    </modules>
 
 	<dependencyManagement>
 		<dependencies>
