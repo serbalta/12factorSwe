@@ -10,4 +10,13 @@ spring:
         native:
           search-locations: classpath:/microservice
 
+  boot:
+    admin:
+      client:
+        url: http://localhost:8888
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
