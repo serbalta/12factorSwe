@@ -3,8 +3,8 @@ WITH replication = {'class': 'SimpleStrategy', 'replication_factor' : 3};
 
 use springcloud;
 
-CREATE TABLE emp(
-                    emp_id int PRIMARY KEY,
+CREATE TABLE accounts(
+                    accounts_id int PRIMARY KEY,
                     emp_name text,
                     emp_city text,
                     emp_sal varint,

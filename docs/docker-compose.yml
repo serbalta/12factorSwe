@@ -1,6 +1,49 @@
 version: "3.1"
+
+networks:
+  se22m061:
+
 services:
+
   cassandra:
     image: cassandra
+    container_name: se22m061-cassandra-server
+    networks:
+      - se22m061
+
     ports:
-      - "9042:9042"
+      - '9042:9042'
+
+
+  # local services
+
+  config-server:
+    image: config-server
+    container_name: se22m061-config-server
+    restart: always
+    networks:
+      - se22m061
+
+    ports:
+      - '8888:8888'
+
+  admin-server:
+    image: admin-server
+    container_name: se22m061-admin-server
+    restart: always
+    networks:
+      - se22m061
+    ports:
+      - '8500:8500'
+
+  account-service:
+    image: account-server
+    container_name: se22m061-account-service
+    restart: always
+    networks:
+      - se22m061
+    ports:
+      - '8080:8080'
+
+
+
